@@ -103,6 +103,26 @@ export default {
           "0%, 100%": { boxShadow: "0 0 20px hsl(180 100% 50% / 0.5)" },
           "50%": { boxShadow: "0 0 40px hsl(180 100% 50% / 0.8)" },
         },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "reverse-spin": {
+          "0%": { transform: "rotate(360deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "scan-line": {
+          "0%": { top: "-100%" },
+          "100%": { top: "200%" },
+        },
+        "typing": {
+          "0%": { width: "0" },
+          "100%": { width: "100%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -112,6 +132,10 @@ export default {
         "slide-in-right": "slide-in-right 0.6s ease-out forwards",
         "scale-in": "scale-in 0.4s ease-out forwards",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
+        "reverse-spin": "reverse-spin 15s linear infinite",
+        "float": "float 3s ease-in-out infinite",
+        "scan-line": "scan-line 3s linear infinite",
       },
     },
   },

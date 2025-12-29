@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
-import VideoSection from '@/components/VideoSection';
+import DeveloperSection from '@/components/DeveloperSection';
 import DownloadSection from '@/components/DownloadSection';
 import Footer from '@/components/Footer';
 import MatrixRain from '@/components/MatrixRain';
@@ -33,7 +33,7 @@ const Index: React.FC = () => {
         <main>
           <HeroSection />
           <FeaturesSection />
-          <VideoSection />
+          <DeveloperSection />
           <DownloadSection />
         </main>
 
