@@ -29,13 +29,19 @@ const HeroSection: React.FC = () => {
         <div className={`flex flex-col lg:flex-row items-center gap-12 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           {/* Content */}
           <div className={`flex-1 text-center lg:text-start ${isRTL ? 'lg:text-end' : ''}`}>
-            {/* Logo */}
+            {/* Logo - Enhanced with glow effects */}
             <div className="flex justify-center lg:justify-start mb-8">
-              <img 
-                src={vyroxenLogo} 
-                alt="VYROXEN" 
-                className="w-32 h-32 md:w-40 md:h-40 animate-float drop-shadow-2xl"
-              />
+              <div className="relative group">
+                {/* Multiple glow layers */}
+                <div className="absolute inset-0 bg-primary/40 rounded-full blur-3xl animate-pulse scale-150" />
+                <div className="absolute inset-0 bg-secondary/30 rounded-full blur-2xl animate-pulse scale-125" style={{ animationDelay: '0.5s' }} />
+                <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
+                <img 
+                  src={vyroxenLogo} 
+                  alt="VYROXEN" 
+                  className="relative w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 animate-float drop-shadow-[0_0_30px_rgba(0,245,255,0.6)] group-hover:drop-shadow-[0_0_50px_rgba(0,245,255,0.8)] transition-all duration-500 group-hover:scale-110"
+                />
+              </div>
             </div>
 
             {/* Title */}
