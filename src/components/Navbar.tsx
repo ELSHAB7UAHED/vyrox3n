@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, Sun, Moon, Maximize, Minimize } from 'lucide-react';
+import { Menu, X, Globe, Maximize, Minimize } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useTheme } from '@/contexts/ThemeContext';
 import vyroxenLogo from '@/assets/vyroxen-logo.png';
 
 const Navbar: React.FC = () => {
@@ -10,7 +9,6 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const { language, setLanguage, t, isRTL } = useLanguage();
-  const { toggleTheme, isDark } = useTheme();
   const location = useLocation();
 
   useEffect(() => {
@@ -66,13 +64,16 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo - Enhanced visibility */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src={vyroxenLogo} 
-              alt="VYROXEN" 
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
-            />
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary/30 rounded-full blur-xl animate-pulse" />
+              <img 
+                src={vyroxenLogo} 
+                alt="VYROXEN" 
+                className="relative h-14 w-14 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(0,245,255,0.5)]"
+              />
+            </div>
             <span className="font-orbitron text-2xl font-bold text-primary text-glow-cyan hidden sm:block">
               VYROXEN
             </span>
@@ -103,19 +104,6 @@ const Navbar: React.FC = () => {
               title={language === 'en' ? 'العربية' : 'English'}
             >
               <Globe className="w-5 h-5 text-foreground/80 group-hover:text-primary transition-colors" />
-            </button>
-
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg border border-primary/30 bg-background/50 hover:bg-primary/20 hover:border-primary transition-all duration-300 group"
-              title={isDark ? t('controls.light_mode') : t('controls.dark_mode')}
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-foreground/80 group-hover:text-primary transition-colors" />
-              ) : (
-                <Moon className="w-5 h-5 text-foreground/80 group-hover:text-primary transition-colors" />
-              )}
             </button>
 
             {/* Fullscreen Toggle */}

@@ -1,8 +1,13 @@
+# VYROXEN - Advanced Network Reconnaissance Toolkit
+# https://vyroxen.lovable.app
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +17,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://vyroxen.lovable.app/sitemap.xml
